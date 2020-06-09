@@ -10,7 +10,7 @@ ENV SCALA_VERSION=$SCALA_VERSION
 
 RUN apk add --no-cache --update wget libsodium-dev bash
 
-RUN wget -qO - "https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz" >/tmp/sbt.tgz
+RUN wget -qO - https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz > /tmp/sbt.tgz
 RUN mkdir -pv "/usr/local/sbt"
 RUN tar xzf /tmp/sbt.tgz -C "/usr/local/sbt" --strip-components=1
 RUN ln -sv /usr/local/sbt/bin/sbt /usr/bin/

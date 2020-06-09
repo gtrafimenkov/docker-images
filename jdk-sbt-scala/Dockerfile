@@ -1,9 +1,12 @@
-ARG SBT_VERSION=1.3.9
-ARG SCALA_VERSION=2.13.1
+ARG SBT_VERSION=1.3.12
+ARG SCALA_VERSION=2.13.2
 
 FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.7_10_openj9-0.20.0-alpine
 ARG SBT_VERSION
 ARG SCALA_VERSION
+
+ENV SBT_VERSION=$SBT_VERSION
+ENV SCALA_VERSION=$SCALA_VERSION
 
 RUN apk add --no-cache --update wget libsodium-dev bash
 

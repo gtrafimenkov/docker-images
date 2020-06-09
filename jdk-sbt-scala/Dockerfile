@@ -8,7 +8,9 @@ ARG SCALA_VERSION
 ENV SBT_VERSION=$SBT_VERSION
 ENV SCALA_VERSION=$SCALA_VERSION
 
-RUN apk add --no-cache --update wget libsodium-dev bash
+RUN apk add --no-cache --update wget libsodium-dev bash ca-certificates
+
+RUN update-ca-certificates
 
 RUN wget -qO - https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz > /tmp/sbt.tgz
 RUN mkdir -pv "/usr/local/sbt"

@@ -11,7 +11,7 @@ jobs:
         name: docker hub
         with:
           path: ./jdk-sbt-scala
-          build_args: SBT_VERSION=1.3.9,SCALA_VERSION=2.13.1
+          build_args: SBT_VERSION=1.3.10,SCALA_VERSION=2.13.2
           tag_with_ref: true
           username: somdoron
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}          

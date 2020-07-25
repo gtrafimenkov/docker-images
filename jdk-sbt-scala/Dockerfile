@@ -1,7 +1,7 @@
 ARG SBT_VERSION=1.3.12
 ARG SCALA_VERSION=2.13.2
 
-FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.7_10_openj9-0.20.0-alpine
+FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.8_10_openj9-0.21.0-alpine
 ARG SBT_VERSION
 ARG SCALA_VERSION
 

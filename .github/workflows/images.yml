@@ -28,7 +28,7 @@ jobs:
           username: somdoron
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}          
           repository: unitfinance/node-zeromq
-   percona-rds-exporter:
+  percona-rds-exporter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

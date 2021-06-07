@@ -16,7 +16,19 @@ jobs:
           username: somdoron
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}          
           repository: unitfinance/jdk-sbt-scala
-  percona-rds-exporter:
+  node-zeromq:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        name: docker hub
+        with:
+          path: ./node-zeromq
+          tag_with_ref: true
+          username: somdoron
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}          
+          repository: unitfinance/node-zeromq
+   percona-rds-exporter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

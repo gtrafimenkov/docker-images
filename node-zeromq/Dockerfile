@@ -19,4 +19,5 @@ FROM node:12.16.1-alpine3.11 as release
 RUN apk add --update --no-cache musl libunwind
 
 COPY --from=builder /usr/local/lib/ /usr/local/lib/
+COPY --from=builder /usr/local/include/ /usr/local/include/
  

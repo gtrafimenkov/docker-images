@@ -1,4 +1,4 @@
-FROM node:12.16.1-alpine3.11 as builder
+FROM node:16.4.2-alpine3.11 as builder
 
 RUN apk add --update --no-cache git autoconf automake make pkgconfig libtool gcc musl-dev g++ libunwind-dev
 
@@ -14,7 +14,7 @@ RUN cd libzmq && \
     make && \
     make install
 
-FROM node:12.16.1-alpine3.11 as release
+FROM node:16.4.2-alpine3.11 as release
 
 RUN apk add --update --no-cache musl libunwind
 

@@ -2,7 +2,7 @@ name: Publish Docker images
 on:
   release:
     types: [published]
-jobs:  
+jobs:
   jdk-sbt-scala:
     runs-on: ubuntu-latest
     steps:
@@ -14,7 +14,7 @@ jobs:
           build_args: SBT_VERSION=1.3.12,SCALA_VERSION=2.13.2
           tag_with_ref: true
           username: somdoron
-          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}          
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
           repository: unitfinance/jdk-sbt-scala
   node-zeromq:
     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
           path: ./node-zeromq
           tag_with_ref: true
           username: somdoron
-          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}          
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
           repository: unitfinance/node-zeromq
   percona-rds-exporter:
     runs-on: ubuntu-latest
@@ -52,3 +52,15 @@ jobs:
           username: somdoron
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
           repository: unitfinance/wrouesnel-postgres-exporter
+  fluxcdv1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        name: docker hub
+        with:
+          path: ./fluxcdv1
+          tag_with_ref: true
+          username: somdoron
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+          repository: unitfinance/fluxcdv1
